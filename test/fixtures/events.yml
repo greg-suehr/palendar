@@ -1,15 +1,71 @@
-one:
-  title: MyString
-  description: MyString
-  location: MyString
+printit:
+  title: Print It! - The Front Page (1931)
+  description: Newspapers are sometimes called “the first rough draft of history”, and as Pittsburgh nears the shutting-down of one of the oldest newspapers in the country, we think it’s worth remembering their role in the communities they serve. Join us as we kick off a new series of films here at the Harris. PRINT IT! will cover the history of newsrooms and newspaper reporters featured on film!
+  location: Harris Theater
+  start_time: 2026-02-11 19:30:00
+  end_time: 2026-02-11 22:00:00
+  published: true
+
+wicked:
+  title: Wicked
+  description: WICKED, the Broadway sensation, looks at what happened in the Land of Oz…but from a different angle. Long before Dorothy arrives, there is another young woman, born with emerald-green skin—smart, fiery, misunderstood, and possessing an extraordinary talent. When she meets a bubbly blonde who is exceptionally popular, their initial rivalry turns into the unlikeliest of friendships…until the world decides to call one “good,” and the other one “wicked.”
+  location: Benedum Center
+  start_time: 2026-02-11 19:30:00
+  end_time: 2026-02-14 22:30:00
+  published: true
+
+romeojuliet:
+  title: Romero & Juliet
+  description: ROMERO & JULIET is a new zombie rock musical. When Romero, (a regional guardsman and distant relative of the filmmaker), meets zombie Juliet at a music festival called Deadstock on Friday the 13th in September 1985, what could possibly go wrong?
+  location: Greer Cabaret Theater
+  start_time: 2026-02-13 19:00:00
+  end_time: 2026-02-14 21:30:00
+  published: true
+
+stepafrika:
+  title: Step Afrika!
+  description: Step Afrika!’s signature work The Migration - Reflections on Jacob Lawrence charts the story of African Americans moving from the rural South to the industrial North to escape Jim Crow, racial oppression, and lynchings in the early 1900s. Inspired by Jacob Lawrence’s iconic 60-panel “The Migration Series” (1940-41), this signature work from the award-winning dance company uses the images, color palette, and motifs in the painting series to tell this astonishing story through pulsating rhythms and visually stunning movement.
+  location: Byham Theater
+  start_time: 2026-02-13 19:00:00
+  end_time: 2026-02-13 21:00:00
+  published: true
+
+thisoldman:
+  title: This Old Man, He Played One - Combining Music, Movement, and Play to Build a Rich Foundation of Mathematical Experiences for Young Learners
+  description: This highly interactive workshop will combine playful games, music and creative movement to provide developmentally appropriate math experiences designed for young learners. Utilizing a variety of techniques, we will explore active learning in key areas of mathematical understanding, such as numbers and operations, patterns, algebra, geometry, and comparison.
+  location: Trust Arts Education Center
+  start_time: 2026-02-14 09:00:00
+  end_time: 2026-02-14 12:00:00
+  published: true
+  
+littleamelie:
+  title: Little Amélie or the Character of Rain
+  description: The world is a perplexing, peaceful mystery to Amélie until a miraculous encounter with chocolate ignites her wild sense of curiosity. As she develops a deep attachment to her family’s housekeeper, Nishio-san, Amélie discovers the wonders of nature as well as the emotional truths hidden beneath the surface of her family’s idyllic life as foreigners in post-war Japan.
+  location: Harris Theater
+  start_time: 2026-02-14 14:00:00
+  end_time:  2026-03-01 15:45:00
+  published: true
+
+roxanne:
+  title: Roxanne (1987) with Valentine's Day chocolate!
+  description: Comic genius Steve Martin delivers an incredible performance as a hero who has only one tiny flaw—no, one huge flaw, his astonishingly long nose. The laughter never stops in this latter-day spin on Cyrano de Bergerac as Martin’s small-town fire chief deals with jerky nose jokes, a bumbling crew of firemen, and his secret love for gorgeous astronomy student Roxanne (Daryl Hannah), who unfortunately is attracted to a fireman long on looks and short on conversation. All the while he’s encouraged to make his feelings known by his friend Dixie (Shelley Duvall). A contemporary love story of mistaken identity and unrequited love, Roxanne is an unforgettable charmer that Siskel & Ebert call a comic masterpiece.
+  location:  Harris Theater
+  start_time: 2026-02-14 19:30:00
+  end_time:  2026-02-14 21:45:00
+  published: true
+
+draft:
+  title: An Unscheduled Event
+  description: This event is a saved draft, should not be displayed on the public event listing!
+  location: 
   start_time: 2026-02-10 11:17:59
   end_time: 2026-02-10 11:17:59
   published: false
 
-two:
-  title: MyString
-  description: MyString
-  location: MyString
+archive:
+  title: An Prior Event
+  description: This event took place in the past, and should not be displayed on the public event listing!
+  location: Main Location
   start_time: 2026-02-10 11:17:59
   end_time: 2026-02-10 11:17:59
   published: false
