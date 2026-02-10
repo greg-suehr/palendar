@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @events = Event.current
   end
 
   def show
