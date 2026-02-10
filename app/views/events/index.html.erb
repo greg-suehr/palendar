@@ -8,24 +8,8 @@
 <% else %>
 <% @events.each do |event| %>
 <div>
+  <%= render "event_card", event: event%>
   <div>
-    <h2><%= event.title %></h2>
-    
-  </div>
-  <div>
-    <% if event.location? %>
-    <p>
-      <%= event.location %>
-    </p>
-    <% end %>
-    <p>
-      <%= event.start_time.strftime('%A, %B %d, %Y | %I:%M %p') %>
-      <% if event.end_time? %>
-        <br>
-        <%= event.end_time.strftime('%A, %B %d, %Y | %I:%M %p') %>
-      <% end %>
-    </p>
-    
     <%= link_to "View Details", event_path(event) %>
     <%= button_to "RSVP", event_path(event) %>        
   </div>

@@ -1,0 +1,18 @@
+<div>
+  <h2><%= event.title %></h2>
+
+  <div>
+    <% if event.location? %>
+    <p>
+      <%= event.location %>
+    </p>
+    <% end %>
+    <p>
+      <%= event.start_time.strftime('%A, %B %d, %Y | %I:%M %p') %>
+      <% if event.end_time? %>
+        <br>
+        <%= event.end_time.strftime('%A, %B %d, %Y | %I:%M %p') %>
+      <% end %>
+    </p>
+  </div>
+</div>
