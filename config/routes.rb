@@ -14,7 +14,15 @@ Rails.application.routes.draw do
 
   # Admin: Event Management
   namespace :admin do
-    resources :events
+    resources :events do
+      member do
+        patch :publish
+        patch :unpublish
+      end
+    end
+
+    #post "/events/:id/publish", to: "events#publish"
+    #post "/events/:id/unpublish", to: "events#unpublish"
     
     #get "/events", to: "events#index"
     #get "/events/:id", to: "events#show"

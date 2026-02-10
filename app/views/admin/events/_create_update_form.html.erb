@@ -1,4 +1,4 @@
-<%= form_with model: event do |form| %>
+<%= form_with model: [:admin, event] do |form| %>
  <% if form.object.errors.any? %>
     <p class="error"><%= form.object.errors.full_messages.first %></p>
   <% end %>

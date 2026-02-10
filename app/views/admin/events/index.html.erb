@@ -33,9 +33,13 @@
     <h4>Actions</h3>
     <%= link_to "View Details", admin_event_path(event) %>
     <%= link_to "Edit", edit_admin_event_path(event) %>
-    <a href="#">Publish</a>
+    <% if event.published %>
+    <%= button_to "Remove", unpublish_admin_event_path(event), method: :patch, data: { turbo_confirm: "Are you sure?" } %>
+    <% else %>
+    <%= button_to "Publish", publish_admin_event_path(event), method: :patch, data: { turbo_confirm: "Are you sure?" } %>
+    <% end %>
     <br>
-    <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+    <%= button_to "Delete", admin_event_path(event), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
   </div>
 </div>
 <% end %>
