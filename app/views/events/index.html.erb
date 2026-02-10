@@ -1,0 +1,20 @@
+<h1>Events</h1>
+<p>Check out our upcoming events!</p>
+
+<% @events.each do |event| %>
+<div>
+  <div>
+    <%= event.title %>
+  </div>
+  <div>
+    <% if event.location %>
+    <p>
+      <%= event.location %>
+    </p>
+    <% end %>
+    <p>
+      <%= event.start_time %> - <% event.end_time %>
+    </p>
+  </div>
+</div>
+<% end %>
