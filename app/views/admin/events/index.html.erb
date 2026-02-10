@@ -1,11 +1,9 @@
 <h1>Events</h1>
-<p>Check out our upcoming events!</p>
-
-<% if @events.empty? %>
+<p>Administrative dashboard: Events</p>
 <div>
-  No upcoming events!
+  <%= link_to "New Event", new_admin_event_path %>
 </div>
-<% else %>
+
 <% @events.each do |event| %>
 <div>
   <div>
@@ -25,11 +23,14 @@
         <%= event.end_time.strftime('%A, %B %d, %Y | %I:%M %p') %>
       <% end %>
     </p>
-    
-    <%= link_to "View Details", event_path(event) %>
-    <%= button_to "RSVP", event_path(event) %>        
   </div>
-
+  <div>
+    <h4>Actions</h3>
+    <%= link_to "View Details", admin_event_path(event) %>
+    <%= link_to "Edit", edit_admin_event_path(event) %>
+    <a href="#">Publish</a>
+    <br>
+    <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+  </div>
 </div>
-<% end %>
 <% end %>
