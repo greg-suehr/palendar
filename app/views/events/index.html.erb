@@ -1,6 +1,4 @@
 <h1>Events</h1>
-<p>Check out our upcoming events!</p>
-
 <% if @events.empty? %>
 <div>
   No upcoming events!
@@ -8,6 +6,7 @@
 <% else %>
 <% @events.each do |event| %>
 <div>
+  <p>Check out our upcoming events!</p>
   <%= render "event_card", event: event%>
   <div>
     <%= link_to "View Details", event_path(event) %>

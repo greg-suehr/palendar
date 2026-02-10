@@ -1,9 +1,14 @@
 <h1>Events</h1>
 <p>Administrative dashboard: Events</p>
+<% if @events.empty? %>
+<div>
+  Nothing on the calendar yet!
+  <%= link_to "Create your first event", new_admin_event_path %>
+</div>
+<% else %>
 <div>
   <%= link_to "New Event", new_admin_event_path %>
 </div>
-
 <% @events.each do |event| %>
 <div>
   <div>
@@ -33,4 +38,5 @@
     <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
   </div>
 </div>
+<% end %>
 <% end %>
