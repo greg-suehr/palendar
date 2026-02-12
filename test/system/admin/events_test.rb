@@ -13,9 +13,13 @@ class Admin::EventsTest < ApplicationSystemTestCase
     click_on "Create Event"
 
     assert_text "Pittsburgh Coffee Meetup"
-    
-    click_on "Publish"
+    assert_text "Let's talk tech"
+    assert_text "Espresso a Mano"
 
-    assert_text "Details"
+    accept_confirm do
+      click_on "Publish"
+    end
+    
+    assert_text "Published"
   end
 end
