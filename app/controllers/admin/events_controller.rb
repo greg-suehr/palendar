@@ -2,7 +2,8 @@ class Admin::EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
 
   def index
-    @events = Event.all
+    @events = Event.all.by_start_time
+    @events = @events.where("title LIKE ?", "%#{params[:query]}%") if params[:query].present?
   end
 
   def show

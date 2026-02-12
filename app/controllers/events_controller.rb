@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.current
+    @events = Event.current.by_start_time
   end
 
   def show

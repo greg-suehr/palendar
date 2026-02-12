@@ -23,6 +23,11 @@
   </p>
 </div>
 <h2>All Events</h2>
+<div class="event-listing">
+<%= form_with url: admin_events_path, method: :get do |form| %>
+<%= form.text_field :query, value: params[:query], placeholder: "Search by title..." %>
+<%= form.submit "Search" %>
+<% end %>
 <% @events.each do |event| %>
 <div class="event-row">
   <div class="event-main">
@@ -55,4 +60,5 @@
   </div>
 </div>
 <% end %>
+</div>
 <% end %>
