@@ -16,12 +16,20 @@ module InviteProto
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
+    # Sytem application configuration
     # config.eager_load_paths << Rails.root.join("extras")
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance|
+      if html_tag =~ /^<label/
+        html_tag
+      elsif instance.error_message.present?
+        error_msg = instance.error_message.is_a?(Array) ? instance.error_message.first : instance.error_message
+        %(#{html_tag}<span class="field-error">#{error_msg}</span>).html_safe
+      else
+        html_tag
+      end
+    }
+
+    # User application configuration
+    config.time_zone = "Central Time (US & Canada)"
   end
 end

@@ -220,6 +220,19 @@
       div > div {
         margin-bottom: var(--spacing);
       }
+
+      .field-error {
+        color: var(--color-danger);
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+      }
+
+      input:has(+ .field-error),
+        textarea:has(+ .field-error),
+        select:has(+ .field-error) {
+        border: 2px solid var(--color-danger);
+        outline-color: var(--color-danger);
+      }
     </style>
     <%= javascript_importmap_tags %>
   </head>

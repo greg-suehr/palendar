@@ -1,7 +1,4 @@
 <%= form_with model: [:admin, event] do |form| %>
- <% if form.object.errors.any? %>
-    <p class="error"><%= form.object.errors.full_messages.first %></p>
-  <% end %>
 <div>
   <%= form.label :title %>
   <%= form.text_field :title %>
@@ -22,8 +19,8 @@
   <%= form.label :end_time %>
   <%= form.datetime_field :end_time %>
 </div>
-
+<br>
 <div>
-    <%= form.submit %>
-  </div>
+  <%= form.submit %>
+</div>
 <% end %>
