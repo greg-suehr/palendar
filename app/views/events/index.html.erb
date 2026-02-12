@@ -4,9 +4,9 @@
   No upcoming events!
 </div>
 <% else %>
+<p>Check out our upcoming events!</p>
 <% @events.each do |event| %>
 <div>
-  <p>Check out our upcoming events!</p>
   <%= render "event_card", event: event%>
   <div>
     <%= link_to "View Details", event_path(event) %>
