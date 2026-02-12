@@ -27,7 +27,7 @@ class EventTest < ActiveSupport::TestCase
   end
 
   test "should save valid Event with start_time = end_time" do
-    myevent = Event.new("title": "A simple event", "start_time": Time.current, "end_time": Time.current)
+    myevent = Event.new("title": "A simple event", "start_time": Time.current.end_of_day, "end_time": Time.current.end_of_day)
     assert myevent.save
   end
   
