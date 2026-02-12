@@ -6,13 +6,14 @@
 <% else %>
 <p>Check out our upcoming events!</p>
 <% @events.each do |event| %>
-<div>
-  <%= render "event_card", event: event%>
-  <div>
+<div class="event-row">
+  <div class="event-main">
+    <%= render "event_card", event: event%>
+  </div>
+  <div class="event-actions">
     <%= link_to "View Details", event_path(event) %>
     <%= button_to "RSVP", event_path(event) %>        
   </div>
-
 </div>
 <% end %>
 <% end %>
