@@ -8,7 +8,7 @@
   </div>
   <div>
     <% if event.published %>
-    <%= button_to "Remove", unpublish_admin_event_path(event), method: :patch, data: {
+    <%= button_to "Unpublish", unpublish_admin_event_path(event), method: :patch, data: {
         turbo_confirm: "Remove this event from the public listing and revert to a draft status. Are you sure?"
         } %>
     <% else %>
