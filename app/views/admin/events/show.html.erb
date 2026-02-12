@@ -1,23 +1,44 @@
-<h1><%= @event.title %></h1>
+<h1>Event Details</h1>
+<div class="event-row">
+  <div class="event-main">
+    <div class="event-header">
+      <h2><%= @event.title %></h2>
+      <div class="event-published-badge">
+        <% if @event.published? %>
+          Published
+        <% else %>
+          <i>Draft</i>
+        <% end %>
+      </div>
+           
+    </div>
 
-<h2>Description</h2>
-<p>
-  <%= @event.description %>
-</p>
+    <p>
+    <% if @event.description? %>
+      <%= @event.description %>
+    <% else %>
+      <i>No description.</i>
+    <% end %>
+    </p>
+    
+    <p>
+    <% if @event.location? %>
+      <%= @event.location %>
+    <% else %>
+      <i>No location.</i>
+    <% end %>
+    </p>
 
-<h2>Details</h2>
-<% if @event.location? %>
-<p>
-  <%= @event.location %>
-</p>
-<% end %>
-<p>
-  <%= @event.start_time.strftime('%A, %B %d, %Y | %I:%M %p') %>
-  <% if @event.end_time? %>
-  <br>
-  <%= @event.end_time.strftime('%A, %B %d, %Y | %I:%M %p') %>
-  <% end %>
-</p>
+    <p>
+      <%= @event.start_time.strftime('%A, %B %d, %Y | %I:%M %p') %>
+      <% if @event.end_time? %>
+        <br>
+        <%= @event.end_time.strftime('%A, %B %d, %Y | %I:%M %p') %>
+      <% end %>
+    </p>
+  </div>
 
-<%= button_to "Publish", publish_admin_event_path(@event), method: :patch %>
-<%= link_to "Back", admin_events_path %>
+  <div class="event-actions">
+    <%= render "event_action_card", event: @event %>
+  </div>
+</div>
