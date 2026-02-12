@@ -12,10 +12,48 @@ Key configuration files:
 
 ## Installation
 
+### Requirements
+
+The following are required to run the application:
+
+* Ruby 3.2+
+* Rails 7.2.3
+* SQLite3
+
+Additional modules need to be version pinned to run tests.
+Install these dependences with bundle.
+
+```
+bundle install
+```
+
 ### Creating the database
 ```
 bin/rails db:create
 bin/rails db:migrate
+```
+
+## Running the app
+
+You can run an empty version of the app with:
+```
+bin/rails server
+```
+
+The public and admin entrypoints for the application will be on:
+ - Public event listing: http://127.0.0.1:3000/
+ - Admin event listing: http://127.0.0.1:3000/admin/events
+
+By default, the app serves requests on port `3000`. If this port is busy, or if
+you otherwise need to specify an alternate port for the web server, you can do
+so by setting the `PORT` environment variable before running the server.
+```
+export PORT=4001
+bin/rails server
+```
+Or by passing the port value using the `-p` or `--port` flag:
+```
+bin/rails s -p 4002
 ```
 
 ## Testing

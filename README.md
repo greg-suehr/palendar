@@ -5,18 +5,30 @@ Palendar is a Rails powered web application that allows you to manage a public l
 # Design
 
 Features:
-  - Create, edit, and publish events to a public feed.
-  - Quickly publish (or unpublish, oops!) events from the Admin: Events listing
+  - Public users can view a list of events, locations, and scheduled times.
+  - Public usres can view additional information about events on a "Show Details" page.
+  - Admins can create and publish events, or save and edit draft events until ready for listing.
+  - Quickly publish (or unpublish, oops!) events from the Admin event listing.
 
 ## System Design
 
-Palendar uses 
+Palendar uses a SQLite database to store information about Events.
+
+Some important notes about the application design:
+  - The "RSVP" button is not functional! Don't be disappointed if you click it.
+  - The "Publish" and "Unpublish" actions occur on distinct endpoints to simplify handling duplicated requests.
+
+Other items of note:
+  - The app does not have any authentication, but a separate `admin` namespace scopes the "New Event", "Edit", "Delete", and "Publish" actions available to users.
+  - Events are not associated with a `user_id`, and there is no User entity.
+  - The public `/events` page does not support any alternate sorting or filtering by Location, Time, or other data.
+  - There is no timezome support. 
 
 Additional details can be found in the [System Design Document](doc/SYSTEM.md).
-  - Routing - list of available actions.
-  - Controllers and Views - 
-  - Model Queries -
-  - Form -
+  - Routing - details on the public/admin namespaced and a list of available actions.
+  - Controllers and Views - details on how the HTML and CSS for the app come together.
+  - Forms - details on how user input, model validations, and (primarily) form styling come together.
+  - Model Queries - details on model scopes you should use (or expand) to get data for presentation.
 
 # Requirements and Setup
 
@@ -35,7 +47,7 @@ app on your local device. You can find additional instructions in the
 1. Clone this project.
 2. `cd` to the project directory
 ```
-cd proto-invite
+cd palendar
 ```
 3. Run bundle to install dependencies required in the Gemfile. Primarily, this
 ensures the correct Rails version for the project, and appropriate versions of
@@ -52,7 +64,7 @@ bin/rails db:create
 bin/rails db:migrate
 ```
 
-Viola! You have an app.
+Viola! You have an app. But you need to run the app to start managing events.
 
 ## Running the application
 
