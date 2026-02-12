@@ -9,7 +9,7 @@ class Event < ApplicationRecord
   scope :current, -> { where(published: true, end_time: (Time.current..)) }
   scope :today, -> { where(published: true, start_time: (Time.current.beginning_of_day..)) }
   scope :prior_published, -> { where(published: true, end_time: ...Time.yesterday.end_of_day) }
-  
+
   scope :published, -> { where(published: true) }
   scope :draft, -> { where(published: false) }
 end

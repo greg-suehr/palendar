@@ -1,6 +1,6 @@
 class Admin::EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
-  
+
   def index
     @events = Event.all
   end
@@ -40,7 +40,7 @@ class Admin::EventsController < ApplicationController
     @event.update(published: true)
     redirect_to admin_event_path(@event)
   end
-  
+
   def unpublish
     @event = Event.find(params[:id])
     @event.update(published: false)
@@ -51,13 +51,13 @@ class Admin::EventsController < ApplicationController
     @event.destroy
     redirect_to admin_events_path
   end
-      
+
   private
     def set_event
       @event = Event.find(params[:id])
     end
-    
+
     def event_params
       params.require(:event).permit(:title, :description, :location, :start_time, :end_time)
-    end  
+    end
 end

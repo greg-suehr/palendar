@@ -19,7 +19,7 @@ class Admin::EventsTest < ApplicationSystemTestCase
     accept_confirm do
       click_on "Publish"
     end
-    
+
     assert_text "Published"
   end
 end

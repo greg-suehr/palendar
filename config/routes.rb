@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   root "events#index"
 
   resources :events, only: %i[ index show ]
-  #get "/events", to: "events#index"
-  #get "/events/:id", to: "events#show"
+  # get "/events", to: "events#index"
+  # get "/events/:id", to: "events#show"
 
   # Admin: Event Management
   namespace :admin do
@@ -21,17 +21,16 @@ Rails.application.routes.draw do
       end
     end
 
-    #post "/events/:id/publish", to: "events#publish"
-    #post "/events/:id/unpublish", to: "events#unpublish"
-    
-    #get "/events", to: "events#index"
-    #get "/events/:id", to: "events#show"
-    #get "/events/:id/edit", to: "events#edit"
-    #post "/events", to: "events#create"
-    #patch "/events/:id", to: "events#update"
-    #put "/events/:id", to: "events#update"
-    #delete "/events/:id", to: "events#destroy"    
-    #get "/events/new", to: "events#new"    
-  end   
-  
+    # post "/events/:id/publish", to: "events#publish"
+    # post "/events/:id/unpublish", to: "events#unpublish"
+
+    # get "/events", to: "events#index"
+    # get "/events/:id", to: "events#show"
+    # get "/events/:id/edit", to: "events#edit"
+    # post "/events", to: "events#create"
+    # patch "/events/:id", to: "events#update"
+    # put "/events/:id", to: "events#update"
+    # delete "/events/:id", to: "events#destroy"
+    # get "/events/new", to: "events#new"
+  end
 end

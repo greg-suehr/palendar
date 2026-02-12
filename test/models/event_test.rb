@@ -30,5 +30,4 @@ class EventTest < ActiveSupport::TestCase
     myevent = Event.new("title": "A simple event", "start_time": Time.current.end_of_day, "end_time": Time.current.end_of_day)
     assert myevent.save
   end
-  
 end
