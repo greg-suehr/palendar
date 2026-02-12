@@ -12,6 +12,9 @@ Key configuration files:
 
 ## Installation
 
+Refer to the Quick Start guide in the README.md file for a step-by-step walkthrough
+of how to set up the app.
+
 ### Requirements
 
 The following are required to run the application:
@@ -69,14 +72,14 @@ Run all unit tests:
 bin/rails test
 ```
 
-Run a specific system tests:
-```
-bin/rails test -b test/system/admin/events_test.rb
-```
-
 Run specific test files:
 ```
 bin/rails test test/models/event_test.rb
 bin/rails test test/controllers/events_controller_test.rb
 bin/rails test test/system/admin/events_test.rb
+```
+
+Run a specific system tests with detailed trace (`-b`):
+```
+bin/rails test -b test/system/admin/events_test.rb
 ```

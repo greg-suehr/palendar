@@ -5,6 +5,9 @@ and technical details useful when working on the application.
 
 ## Architecture
 
+Palendar is a simple application. Manage your public event listing with nothing
+more than a web server and database.
+
 * Ruby on Rails powers the web application and database interactions
 * SQLite is the database
 
@@ -13,9 +16,9 @@ and technical details useful when working on the application.
 The application has two main route areas:
 
 The `public` namespace:
-- `root` → `events#index` - Public event listing
-- `GET /events` → `events#index` - Event listing
-- `GET /events/:id` → `events#show` - Event details
+- `root` - Public event listing
+- `GET /events` - Event listing
+- `GET /events/:id` - Event details
 
 The `admin` namespace:
 - `GET /admin/events` - All events dashboard
@@ -31,7 +34,8 @@ The `admin` namespace:
 ## Controllers and Views
 
 Views for Palendar are relatively simple.
-The ActionView `field_error_proc`
+The ActionView `field_error_proc` is probably the most non-obvious convention used
+to define the application UI, which is detailed in the Forms section of this document.
 
 There are two controllers `EventsController` and `Admin::EventsController`.
 The controller layer contains some logic for filtering and sorting data for
@@ -50,13 +54,13 @@ Styling happens in the `app/layouts/application.html.erb` file. There is no asse
 required or configured, and the prior note regarding further thought toward a design system
 should be had before continuing on with this approach.
 
-### Form Errors
+## Forms
 
 The "New Event" page includes a warning to users regarding the required fields
 (`title`, `start_time`, `end_time`).
 
 Note that even draft events must have both a `start_time` and an `end_time`. Additional details
-on this behavior are noted in the Model Validations section.
+on this behavior are noted in the Model Validations section of this document.
 
 Form validation errors are displayed inline using the ActionView `field_error_proc`:
  - https://guides.rubyonrails.org/configuring.html#config-action-view-field-error-proc
@@ -84,14 +88,14 @@ If the defined scopes do not sort new development, you should consider expanding
 ### Sorts
 | scope | query description | use case |
 |---|---|---|
-| by_start_time | | |
-| by_end_time | | |
+| by_start_time | Next starting event first, ascending by start_time. | Used for the public events feed.  |
+| by_end_time | Next ending event first, then ascending by end_time. | Useful alternate sort for feeds, as active events happen to sort first. |
 
 ### Filters
 | scope | query description | use case |
 |---|---|---|
-| current | All published events with an end time after the current time. |  |
-| today | All published events with a start time after the beginning of today. |  |
-| prior_published | Published events with an end time before the end of yesterday. | |
-| published | All published events. Essentially, a current public archive. | |
-| draft | All unpublished events. | |
+| current | All published events with an end time after the current time. | Used for the public events feed. |
+| today | All published events with a start time after the beginning of today. | Display today's ended events. |
+| prior_published | Published events with an end time before the end of yesterday. | Display historical events. |
+| published | All published events. Essentially, a current public archive. | Display a full catalog of current, draft, and historical events. |
+| draft | All unpublished events. | Filter the admin event listing to show only unpublished events. |
