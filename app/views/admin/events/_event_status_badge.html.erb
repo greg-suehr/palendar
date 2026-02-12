@@ -1,0 +1,11 @@
+<% if event.published? %>
+<%= content_tag(:div,
+    "Published",
+    class: class_names('event-published-badge', 'event-badge-color-published')
+    ) %>
+<% else %>
+<%= content_tag(:div,
+    "Draft",
+    class: class_names('event-published-badge', 'event-badge-color-draft')
+    ) %>
+<% end %>

@@ -3,14 +3,18 @@
   <div class="event-main">
     <div class="event-header">
       <h2><%= @event.title %></h2>
-      <div class="event-published-badge">
-        <% if @event.published? %>
-          Published
-        <% else %>
-          <i>Draft</i>
-        <% end %>
-      </div>
-           
+      
+      <% if @event.published? %>
+      <%= content_tag(:div,
+          "Published",
+          class: class_names('event-published-badge', 'event-badge-color-published')
+          ) %>
+      <% else %>
+      <%= content_tag(:div,
+          "Draft",
+          class: class_names('event-published-badge', 'event-badge-color-draft')
+          ) %>
+      <% end %>
     </div>
 
     <p>
@@ -42,3 +46,4 @@
     <%= render "event_action_card", event: @event %>
   </div>
 </div>
+  <%= link_to "Back", admin_events_path %>

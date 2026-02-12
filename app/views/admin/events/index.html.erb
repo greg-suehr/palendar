@@ -26,7 +26,16 @@
 <% @events.each do |event| %>
 <div class="event-row">
   <div class="event-main">
-    <h3><%= event.title %></h3>
+    <div class="event-header">
+      <h3><%= event.title %></h3>
+      <div class="event-published-badge">
+        <% if event.published? %>
+          Published
+        <% else %>
+          Draft
+        <% end %>
+      </div>
+    </div>
     
     <% if event.location? %>
     <p><%= event.location %></p>
