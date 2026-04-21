@@ -6,7 +6,7 @@ gem "rails", "~> 7.2.3"
 
 group :test do
   gem "capybara"
-  gem "minitest", "~> 5.25"
+  gem "minitest", "~> 6.0"
   gem "selenium-webdriver", "4.25.0"
 end
 
